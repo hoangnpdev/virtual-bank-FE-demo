@@ -1,0 +1,15 @@
+@use "bulma/versions/bulma-no-dark-mode";
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.content {
+    width: 400px;
+    height: 80vh;
+    border-radius: 1em;
+    overflow: hidden;
+}

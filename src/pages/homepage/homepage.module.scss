@@ -1,0 +1,46 @@
+@use "bulma/versions/bulma-no-dark-mode";
+
+.container {
+}
+
+
+
+.account-section {
+    display: flex;
+}
+
+.second-area {
+    position: relative;
+    top: -2em;
+}
+
+.card-section {
+    display: flex;
+    overflow-x: scroll;
+}
+
+.card-section::-webkit-scrollbar {
+    display: none;
+}
+
+.card-item {
+    min-width: 80%;
+}
+
+.service-section {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.service-item {
+    min-width: 30%;
+
+}
+
+
+.modified-card-content {
+    @extend .card-content;
+    padding: 0.5em;
+    height: 5em;
+}

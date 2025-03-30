@@ -1,6 +1,6 @@
 import style from './sign-in.module.css'
 import {SubmitHandler, useForm} from "react-hook-form";
-import {useNavigate} from "react-router";
+import {useLocation, useNavigate} from "react-router";
 import {LogoComponent} from "../../shared-components/logo/logo.component.tsx";
 
 type InputData = {
@@ -15,7 +15,7 @@ export function SignInPage() {
         register,
         handleSubmit,
     } = useForm<InputData>()
-
+    const location = useLocation();
     let navigate = useNavigate();
 
     const login: SubmitHandler<InputData> = (data) => {
@@ -32,7 +32,11 @@ export function SignInPage() {
             .then(token => {
                 localStorage.setItem("token", token);
                 window.alert(token);
-                navigate('/home-page')
+                if (location.state?.redirectLink) {
+                    navigate(location.state.redirectLink);
+                } else {
+                    navigate('/home-page')
+                }
             })
     }
 

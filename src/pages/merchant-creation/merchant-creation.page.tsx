@@ -6,8 +6,9 @@ export function MerchantCreationPage() {
 
     const [searchParams]= useSearchParams();
 
+
     const confirm = () => {
-        fetch("http://localhost:3000/payment/merchant", {
+        fetch("http://localhost:3000/payment-gateway/merchant", {
             method: 'POST',
             headers: {
                 'Authorization': 'Bearer ' + localStorage.getItem('token')
